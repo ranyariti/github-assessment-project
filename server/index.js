@@ -27,8 +27,8 @@ app.get('/', (req, res) => {
   res.send('🟢 Backend is running.');
 });
 
-
-const PORT = 5050;
+// ✅ Use dynamic port from environment
+const PORT = process.env.PORT || 5050;
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
